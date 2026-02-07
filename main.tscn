@@ -1,3 +1,52 @@
 [gd_scene format=3 uid="uid://cuena42d084ev"]
 
+[ext_resource type="Script" uid="uid://yk0eyrswgkpf" path="res://player.gd" id="1_ig7tw"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7dm0k"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7dm0k"]
+height = 42.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ig7tw"]
+
+[sub_resource type="TextMesh" id="TextMesh_7dm0k"]
+text = "----"
+font_size = 127
+
 [node name="Node2D" type="Node2D" unique_id=256871629]
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1675963825]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1229624857]
+shape = SubResource("WorldBoundaryShape2D_7dm0k")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Ground" unique_id=967794212]
+position = Vector2(0, 1428)
+scale = Vector2(1000, 2855.93)
+mesh = SubResource("BoxMesh_ig7tw")
+
+[node name="Player" type="RigidBody2D" parent="." unique_id=2117748281]
+modulate = Color(1, 0.46680212, 0.58452326, 1)
+position = Vector2(0, -59)
+script = ExtResource("1_ig7tw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=2102127788]
+shape = SubResource("CapsuleShape2D_7dm0k")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Player" unique_id=1979263424]
+position = Vector2(-4.7683716e-07, -4.7683716e-07)
+scale = Vector2(20.000002, 21.000002)
+mesh = SubResource("CapsuleMesh_ig7tw")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2129305968]
+position = Vector2(0, 59)
+position_smoothing_enabled = true
+
+[node name="Arrow" type="Node2D" parent="Player" unique_id=2027432043]
+
+[node name="Mesh" type="MeshInstance2D" parent="Player/Arrow" unique_id=1473978485]
+position = Vector2(20.883327, 3.4376411)
+scale = Vector2(27.08351, 22.664007)
+mesh = SubResource("TextMesh_7dm0k")
