@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c7rwtvg70osel" path="res://scripts/player.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://dj5t6ynhkiq0c" path="res://scripts/main.gd" id="1_lquwl"]
-[ext_resource type="Texture2D" uid="uid://qxnbiusk6ohb" path="res://icon.svg" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://cbttnvyo5duyp" path="res://assets/godot.png" id="3_7mycd"]
 [ext_resource type="Texture2D" uid="uid://blurveuh2pfmu" path="res://assets/tile.png" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://bopa68s1p75mu" path="res://scripts/finish.gd" id="4_lquwl"]
 [ext_resource type="Script" uid="uid://b2cc7bv5144kb" path="res://scripts/fade.gd" id="6_7mycd"]
@@ -238,7 +238,9 @@ z_index = 1
 shape = SubResource("RectangleShape2D_h2yge")
 
 [node name="Sprite" type="Sprite2D" parent="Player" unique_id=576435682]
-texture = ExtResource("2_0xm2m")
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.21333334, 0.21333334)
+texture = ExtResource("3_7mycd")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=277835809]
 zoom = Vector2(0.4, 0.4)
@@ -247,7 +249,6 @@ limit_top = -920
 limit_right = 16615
 limit_bottom = 903
 limit_smoothed = true
-position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 drag_horizontal_enabled = true
 

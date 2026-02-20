@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://fcww2dxbvhth"
+path="res://.godot/imported/Super Mario Theme Song by KOJI KONDO (1985).mp3-0c7f25e028de8e95d9263b4a067604c8.mp3str"
+
+[deps]
+
+source_file="res://assets/Super Mario Theme Song by KOJI KONDO (1985).mp3"
+dest_files=["res://.godot/imported/Super Mario Theme Song by KOJI KONDO (1985).mp3-0c7f25e028de8e95d9263b4a067604c8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
