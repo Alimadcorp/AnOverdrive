@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://da03sg0x6bjf4" path="res://assets/YDoor.png" id="8_4c57u"]
 [ext_resource type="Script" uid="uid://qgk4h3ia00sc" path="res://scripts/door.gd" id="8_efxa6"]
 [ext_resource type="Texture2D" uid="uid://6qlvkbx8ddc0" path="res://assets/YKey.png" id="8_w48qg"]
+[ext_resource type="AudioStream" uid="uid://fcww2dxbvhth" path="res://assets/Super Mario Theme Song by KOJI KONDO (1985).mp3" id="15_vivmo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
 custom_solver_bias = 1.0
@@ -290,6 +291,12 @@ limit_smoothed = true
 position_smoothing_speed = 10.0
 drag_horizontal_enabled = true
 
+[node name="CollisionPlayer" type="AudioStreamPlayer2D" parent="Player" unique_id=1445399526]
+
+[node name="ActionPlayer" type="AudioStreamPlayer2D" parent="Player" unique_id=324207703]
+
+[node name="TorquePlayer" type="AudioStreamPlayer2D" parent="Player" unique_id=1403762508]
+
 [node name="Levels" type="Node2D" parent="." unique_id=994739417]
 z_index = 1
 
@@ -423,6 +430,12 @@ script = ExtResource("6_7mycd")
 
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1256898303]
 gizmo_extents = 157.6
+
+[node name="BG Music" type="AudioStreamPlayer" parent="." unique_id=714343238]
+stream = ExtResource("15_vivmo")
+volume_db = -5.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="Level/ExitArea" to="Level/ExitArea" method="_on_body_entered"]
 [connection signal="level_completed" from="Level/ExitArea" to="." method="_on_finish_level_completed"]
