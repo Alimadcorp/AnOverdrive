@@ -3,17 +3,25 @@
 [ext_resource type="Script" uid="uid://c7rwtvg70osel" path="res://scripts/player.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://dj5t6ynhkiq0c" path="res://scripts/main.gd" id="1_lquwl"]
 [ext_resource type="Texture2D" uid="uid://cbttnvyo5duyp" path="res://assets/godot.png" id="3_7mycd"]
+[ext_resource type="AudioStream" uid="uid://c2i8oclpqjv6k" path="res://assets/Hit1.mp3" id="3_getpj"]
 [ext_resource type="Texture2D" uid="uid://blurveuh2pfmu" path="res://assets/tile.png" id="4_1bvp3"]
+[ext_resource type="AudioStream" uid="uid://crenuxi7qrf65" path="res://assets/Torque.mp3" id="4_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://bhl1jk33sb2dv" path="res://assets/box.jpg" id="4_dg77c"]
 [ext_resource type="Script" uid="uid://bopa68s1p75mu" path="res://scripts/finish.gd" id="4_lquwl"]
+[ext_resource type="AudioStream" uid="uid://b2vjsh3dcaapi" path="res://assets/Hit2.mp3" id="4_ryguw"]
+[ext_resource type="AudioStream" uid="uid://b4g7sade7sxya" path="res://assets/Hit3.mp3" id="5_d13ii"]
+[ext_resource type="AudioStream" uid="uid://3x11hqc3qo5p" path="res://assets/Hit4.mp3" id="6_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://dfft7utnrx4iq" path="res://assets/sqr.png" id="6_5vw27"]
 [ext_resource type="Script" uid="uid://b2cc7bv5144kb" path="res://scripts/fade.gd" id="6_7mycd"]
 [ext_resource type="Shader" uid="uid://cs78koen46h0v" path="res://scripts/main.gdshader" id="6_272bh"]
 [ext_resource type="Script" uid="uid://dtcnc47r4d5p5" path="res://scripts/button.gd" id="6_kek77"]
+[ext_resource type="AudioStream" uid="uid://cgfhigue4fb72" path="res://assets/Hit5.mp3" id="7_0odxb"]
 [ext_resource type="Script" uid="uid://qg3l5cwljt2r" path="res://scripts/key.gd" id="7_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://da03sg0x6bjf4" path="res://assets/YDoor.png" id="8_4c57u"]
+[ext_resource type="AudioStream" uid="uid://bm5j6c11wlju7" path="res://assets/Jump.mp3" id="8_d13ii"]
 [ext_resource type="Script" uid="uid://qgk4h3ia00sc" path="res://scripts/door.gd" id="8_efxa6"]
 [ext_resource type="Texture2D" uid="uid://6qlvkbx8ddc0" path="res://assets/YKey.png" id="8_w48qg"]
+[ext_resource type="AudioStream" uid="uid://b3nq3ij0akd0q" path="res://assets/Coin Collect.mp3" id="9_1u8w0"]
 [ext_resource type="AudioStream" uid="uid://fcww2dxbvhth" path="res://assets/Super Mario Theme Song by KOJI KONDO (1985).mp3" id="15_vivmo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
@@ -271,6 +279,9 @@ z_index = 2
 z_as_relative = false
 script = ExtResource("1_ig7tw")
 help_force = 600.0
+collision_sounds = Array[AudioStream]([ExtResource("3_getpj"), ExtResource("4_ryguw"), ExtResource("5_d13ii"), ExtResource("6_1u8w0"), ExtResource("7_0odxb")])
+jump_sound = ExtResource("8_d13ii")
+collect_sound = ExtResource("9_1u8w0")
 
 [node name="Collision" type="CollisionShape2D" parent="Player" unique_id=1874254700]
 z_index = 1
@@ -296,6 +307,9 @@ drag_horizontal_enabled = true
 [node name="ActionPlayer" type="AudioStreamPlayer2D" parent="Player" unique_id=324207703]
 
 [node name="TorquePlayer" type="AudioStreamPlayer2D" parent="Player" unique_id=1403762508]
+stream = ExtResource("4_2cqfq")
+volume_db = -24.409
+parameters/looping = true
 
 [node name="Levels" type="Node2D" parent="." unique_id=994739417]
 z_index = 1

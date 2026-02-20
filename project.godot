@@ -17,6 +17,10 @@ config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.svg"
 
+[audio]
+
+driver/output_latency.web=40
+
 [autoload]
 
 State="*uid://bgyrhn2rovu2f"
