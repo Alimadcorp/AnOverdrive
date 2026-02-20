@@ -10,6 +10,11 @@ extends RigidBody2D
 
 @onready var ray := $GroundRay
 
+var collected_keys: Array[Color] = []
+
+func add_key(color: Color) -> void:
+	collected_keys.append(color)
+
 func _physics_process(delta):
 	handle_spin()
 	handle_jump()
