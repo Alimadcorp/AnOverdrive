@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://blurveuh2pfmu" path="res://assets/tile.png" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://bopa68s1p75mu" path="res://scripts/finish.gd" id="4_lquwl"]
 [ext_resource type="Script" uid="uid://b2cc7bv5144kb" path="res://scripts/fade.gd" id="6_7mycd"]
+[ext_resource type="Shader" uid="uid://cs78koen46h0v" path="res://scripts/main.gdshader" id="6_272bh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
 custom_solver_bias = 1.0
@@ -93,7 +94,6 @@ texture_region_size = Vector2i(128, 128)
 0:3/0 = 0
 0:3/0/terrain_set = 0
 0:3/0/terrain = 0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-39.5, -64, -39.5, -39.5, -64, -39.5, -64, -64)
 0:3/0/terrains_peering_bit/right_side = 0
 0:3/0/terrains_peering_bit/bottom_right_corner = 0
 0:3/0/terrains_peering_bit/bottom_side = 0
@@ -110,7 +110,6 @@ texture_region_size = Vector2i(128, 128)
 2:3/0 = 0
 2:3/0/terrain_set = 0
 2:3/0/terrain = 0
-2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(39.5, -64, 39.5, -39.5, 64, -39.5, 64, -64)
 2:3/0/terrains_peering_bit/right_side = 0
 2:3/0/terrains_peering_bit/bottom_right_corner = 0
 2:3/0/terrains_peering_bit/bottom_side = 0
@@ -135,7 +134,6 @@ texture_region_size = Vector2i(128, 128)
 0:5/0 = 0
 0:5/0/terrain_set = 0
 0:5/0/terrain = 0
-0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-39.5, 64, -39.5, 39.5, -64, 39.5, -64, 64)
 0:5/0/terrains_peering_bit/right_side = 0
 0:5/0/terrains_peering_bit/bottom_right_corner = 0
 0:5/0/terrains_peering_bit/bottom_side = 0
@@ -151,7 +149,6 @@ texture_region_size = Vector2i(128, 128)
 2:5/0 = 0
 2:5/0/terrain_set = 0
 2:5/0/terrain = 0
-2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(39.5, 64, 39.5, 39.5, 64, 39.5, 64, 64)
 2:5/0/terrains_peering_bit/right_side = 0
 2:5/0/terrains_peering_bit/bottom_side = 0
 2:5/0/terrains_peering_bit/bottom_left_corner = 0
@@ -162,8 +159,6 @@ texture_region_size = Vector2i(128, 128)
 0:6/0 = 0
 0:6/0/terrain_set = 0
 0:6/0/terrain = 0
-0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, 64, -64, 64, -64, 39, -40, 39)
-0:6/0/physics_layer_0/polygon_1/points = PackedVector2Array(41, 39, 64, 39, 64, 64, 41, 64)
 0:6/0/terrains_peering_bit/right_side = 0
 0:6/0/terrains_peering_bit/bottom_side = 0
 0:6/0/terrains_peering_bit/left_side = 0
@@ -178,8 +173,6 @@ texture_region_size = Vector2i(128, 128)
 2:6/0 = 0
 2:6/0/terrain_set = 0
 2:6/0/terrain = 0
-2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -40, 64, -64, 39, -64, 39, -40)
-2:6/0/physics_layer_0/polygon_1/points = PackedVector2Array(39, 41, 39, 64, 64, 64, 64, 41)
 2:6/0/terrains_peering_bit/right_side = 0
 2:6/0/terrains_peering_bit/bottom_side = 0
 2:6/0/terrains_peering_bit/bottom_left_corner = 0
@@ -189,8 +182,6 @@ texture_region_size = Vector2i(128, 128)
 0:7/0 = 0
 0:7/0/terrain_set = 0
 0:7/0/terrain = 0
-0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, -64, -64, -64, -64, -39, -40, -39)
-0:7/0/physics_layer_0/polygon_1/points = PackedVector2Array(41, -39, 64, -39, 64, -64, 41, -64)
 0:7/0/terrains_peering_bit/right_side = 0
 0:7/0/terrains_peering_bit/bottom_right_corner = 0
 0:7/0/terrains_peering_bit/bottom_side = 0
@@ -200,8 +191,6 @@ texture_region_size = Vector2i(128, 128)
 1:7/0 = 0
 1:7/0/terrain_set = 0
 1:7/0/terrain = 0
-1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -40, -64, -64, -39, -64, -39, -40)
-1:7/0/physics_layer_0/polygon_1/points = PackedVector2Array(-39, 41, -39, 64, -64, 64, -64, 41)
 1:7/0/terrains_peering_bit/right_side = 0
 1:7/0/terrains_peering_bit/bottom_right_corner = 0
 1:7/0/terrains_peering_bit/bottom_side = 0
@@ -224,6 +213,31 @@ sources/0 = SubResource("TileSetAtlasSource_lquwl")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(274.75, 1657.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5vw27"]
+shader = ExtResource("6_272bh")
+shader_parameter/brightness = 1.41600006726
+shader_parameter/contrast = 1.046000049685
+shader_parameter/saturation = 1.2410000589475
+shader_parameter/gamma = 1.22900005185773
+shader_parameter/curvature = 0.030000001425
+shader_parameter/corner_soften = 0.06
+shader_parameter/vignette = 0.1550000073625
+shader_parameter/scanline_strength = 0.18000000855
+shader_parameter/scanline_density = 2.2490000830775
+shader_parameter/interlace_strength = 0.730000034675
+shader_parameter/mask_strength = 0.22
+shader_parameter/mask_scale = 1.0
+shader_parameter/chroma_offset_px = 0.2400000114
+shader_parameter/luma_smear_px = 0.6250000296875
+shader_parameter/jitter_px = 0.4830000229425
+shader_parameter/wobble_px = 1.198000056905
+shader_parameter/tape_noise = 0.0
+shader_parameter/tape_lines = 0.0
+shader_parameter/roll_speed = 0.0
+shader_parameter/roll_strength = 0.0
+shader_parameter/glow_strength = 1.274000060515
+shader_parameter/glow_threshold = 0.6250000296875
 
 [node name="World" type="Node2D" unique_id=1537044492]
 script = ExtResource("1_lquwl")
@@ -277,6 +291,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Shader" type="ColorRect" parent="CanvasLayer" unique_id=1257708657]
+material = SubResource("ShaderMaterial_5vw27")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer" unique_id=335838970]
 anchors_preset = 15
