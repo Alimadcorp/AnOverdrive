@@ -22,11 +22,22 @@
 [ext_resource type="Script" uid="uid://qgk4h3ia00sc" path="res://scripts/door.gd" id="8_efxa6"]
 [ext_resource type="Texture2D" uid="uid://6qlvkbx8ddc0" path="res://assets/YKey.png" id="8_w48qg"]
 [ext_resource type="AudioStream" uid="uid://b3nq3ij0akd0q" path="res://assets/Coin Collect.mp3" id="9_1u8w0"]
+[ext_resource type="Script" uid="uid://vcjlyo6ubrnm" path="res://scripts/door2.gd" id="14_1u8w0"]
 [ext_resource type="AudioStream" uid="uid://fcww2dxbvhth" path="res://assets/Super Mario Theme Song by KOJI KONDO (1985).mp3" id="15_vivmo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
 custom_solver_bias = 1.0
 size = Vector2(128, 128)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w48qg"]
+radius = 21.0
+height = 109.99994
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d13ii"]
+size = Vector2(190, 1254.3478)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4c57u"]
+size = Vector2(352.94092, 1247.0591)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dg77c"]
 friction = 0.44
@@ -36,13 +47,6 @@ size = Vector2(250, 25.99997)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vw27"]
 size = Vector2(240, 4)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w48qg"]
-radius = 21.0
-height = 109.99994
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4c57u"]
-size = Vector2(352.94092, 1247.0591)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lquwl"]
 texture = ExtResource("4_1bvp3")
@@ -316,43 +320,6 @@ z_index = 1
 
 [node name="1" type="Node2D" parent="Levels" unique_id=686053730]
 
-[node name="Box" type="RigidBody2D" parent="Levels/1" unique_id=822424669]
-z_index = 2
-z_as_relative = false
-position = Vector2(2943, -108)
-mass = 0.255
-physics_material_override = SubResource("PhysicsMaterial_dg77c")
-angular_damp = 0.22
-
-[node name="Collision" type="CollisionShape2D" parent="Levels/1/Box" unique_id=188818799]
-z_index = 1
-shape = SubResource("RectangleShape2D_h2yge")
-
-[node name="Sprite" type="Sprite2D" parent="Levels/1/Box" unique_id=2139249619]
-position = Vector2(-3.8146973e-06, 3.8146973e-06)
-scale = Vector2(0.569, 0.569)
-texture = ExtResource("4_dg77c")
-
-[node name="Button" type="StaticBody2D" parent="Levels/1" unique_id=238254050]
-position = Vector2(3824, 510.99997)
-script = ExtResource("6_kek77")
-linked_door = NodePath("../Door")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/1/Button" unique_id=1641348824]
-position = Vector2(0, 2.0000305)
-shape = SubResource("RectangleShape2D_272bh")
-
-[node name="DetectionArea" type="Area2D" parent="Levels/1/Button" unique_id=1824353017]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/1/Button/DetectionArea" unique_id=580464370]
-position = Vector2(0, -17)
-shape = SubResource("RectangleShape2D_5vw27")
-
-[node name="Sprite2D" type="Sprite2D" parent="Levels/1/Button" unique_id=693234089]
-modulate = Color(1, 0, 0, 1)
-scale = Vector2(1.953125, 0.23437503)
-texture = ExtResource("6_5vw27")
-
 [node name="Key" type="Area2D" parent="Levels/1" unique_id=916442450]
 position = Vector2(4142, 414)
 script = ExtResource("7_ycdy4")
@@ -365,15 +332,22 @@ shape = SubResource("CapsuleShape2D_w48qg")
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("8_w48qg")
 
-[node name="Door" type="AnimatableBody2D" parent="Levels/1" unique_id=1385997374]
+[node name="Door" type="Node2D" parent="Levels/1" unique_id=1480788529]
 z_index = -1
 position = Vector2(5360, 0)
 scale = Vector2(0.125, 0.46)
-script = ExtResource("8_efxa6")
-slide_distance = 700.0
-slide_time = 0.6
+script = ExtResource("14_1u8w0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/1/Door" unique_id=2021606744]
+[node name="Detection" type="Area2D" parent="Levels/1/Door" unique_id=135070852]
+position = Vector2(-40, 4.347824)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/1/Door/Detection" unique_id=2124065638]
+position = Vector2(-105, -20.652172)
+shape = SubResource("RectangleShape2D_d13ii")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Levels/1/Door" unique_id=304818122]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/1/Door/StaticBody2D" unique_id=2021606744]
 position = Vector2(-0.00390625, -3.9100647e-05)
 scale = Vector2(0.9999996, 0.9999996)
 shape = SubResource("RectangleShape2D_4c57u")
@@ -381,25 +355,218 @@ shape = SubResource("RectangleShape2D_4c57u")
 [node name="Sprite2D" type="Sprite2D" parent="Levels/1/Door" unique_id=1834468026]
 texture = ExtResource("8_4c57u")
 
-[node name="Door2" type="AnimatableBody2D" parent="Levels/1" unique_id=713394063]
+[node name="2" type="Node2D" parent="Levels" unique_id=2064788577]
+
+[node name="Box" type="RigidBody2D" parent="Levels/2" unique_id=35273087]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.255
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/2/Box" unique_id=1475742561]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/2/Box" unique_id=2027637776]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="0" type="Node2D" parent="Levels" unique_id=172870069]
+
+[node name="4" type="Node2D" parent="Levels" unique_id=1705573963]
+
+[node name="Box2" type="RigidBody2D" parent="Levels/4" unique_id=2079270107]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.255
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/4/Box2" unique_id=2034335221]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/4/Box2" unique_id=1567342250]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Button" type="StaticBody2D" parent="Levels/4" unique_id=238254050]
+position = Vector2(3824, 510.99997)
+script = ExtResource("6_kek77")
+linked_door = NodePath("../Door")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/4/Button" unique_id=1641348824]
+position = Vector2(0, 2.0000305)
+shape = SubResource("RectangleShape2D_272bh")
+
+[node name="DetectionArea" type="Area2D" parent="Levels/4/Button" unique_id=1824353017]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/4/Button/DetectionArea" unique_id=580464370]
+position = Vector2(0, -17)
+shape = SubResource("RectangleShape2D_5vw27")
+
+[node name="Sprite2D" type="Sprite2D" parent="Levels/4/Button" unique_id=693234089]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(1.953125, 0.23437503)
+texture = ExtResource("6_5vw27")
+
+[node name="Door" type="AnimatableBody2D" parent="Levels/4" unique_id=195485864]
 z_index = -1
-position = Vector2(4542, 244)
+position = Vector2(5360, 0)
 scale = Vector2(0.125, 0.46)
 script = ExtResource("8_efxa6")
-slide_distance = 700.0
-slide_time = 0.6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/1/Door2" unique_id=2085622141]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/4/Door" unique_id=299610311]
 position = Vector2(-0.00390625, -3.9100647e-05)
 scale = Vector2(0.9999996, 0.9999996)
 shape = SubResource("RectangleShape2D_4c57u")
 
-[node name="Sprite2D" type="Sprite2D" parent="Levels/1/Door2" unique_id=83753632]
+[node name="Sprite2D" type="Sprite2D" parent="Levels/4/Door" unique_id=1116241896]
 texture = ExtResource("8_4c57u")
 
-[node name="2" type="Node2D" parent="Levels" unique_id=172870069]
+[node name="5" type="Node2D" parent="Levels" unique_id=1770273658]
 
-[node name="4" type="Node2D" parent="Levels" unique_id=1705573963]
+[node name="Box3" type="RigidBody2D" parent="Levels/5" unique_id=179902453]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.255
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/5/Box3" unique_id=1133165922]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/5/Box3" unique_id=1867164002]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box4" type="RigidBody2D" parent="Levels/5" unique_id=1267907189]
+z_index = 2
+z_as_relative = false
+position = Vector2(2582, -108)
+mass = 0.255
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/5/Box4" unique_id=903944471]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/5/Box4" unique_id=124003953]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Button" type="StaticBody2D" parent="Levels/5" unique_id=142638876]
+position = Vector2(4204, 510.99997)
+script = ExtResource("6_kek77")
+linked_door = NodePath("../Door")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/5/Button" unique_id=1270606607]
+position = Vector2(0, 2.0000305)
+shape = SubResource("RectangleShape2D_272bh")
+
+[node name="DetectionArea" type="Area2D" parent="Levels/5/Button" unique_id=703174361]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/5/Button/DetectionArea" unique_id=953190000]
+position = Vector2(0, -17)
+shape = SubResource("RectangleShape2D_5vw27")
+
+[node name="Sprite2D" type="Sprite2D" parent="Levels/5/Button" unique_id=336888658]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(1.953125, 0.23437503)
+texture = ExtResource("6_5vw27")
+
+[node name="Button2" type="StaticBody2D" parent="Levels/5" unique_id=1008132087]
+position = Vector2(3714, 510.99997)
+script = ExtResource("6_kek77")
+linked_door = NodePath("../Door2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/5/Button2" unique_id=2048318582]
+position = Vector2(0, 2.0000305)
+shape = SubResource("RectangleShape2D_272bh")
+
+[node name="DetectionArea" type="Area2D" parent="Levels/5/Button2" unique_id=910869295]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/5/Button2/DetectionArea" unique_id=743629014]
+position = Vector2(0, -17)
+shape = SubResource("RectangleShape2D_5vw27")
+
+[node name="Sprite2D" type="Sprite2D" parent="Levels/5/Button2" unique_id=655187962]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(1.953125, 0.23437503)
+texture = ExtResource("6_5vw27")
+
+[node name="Door" type="AnimatableBody2D" parent="Levels/5" unique_id=327665924]
+z_index = -1
+position = Vector2(5360, 0)
+scale = Vector2(0.125, 0.46)
+script = ExtResource("8_efxa6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/5/Door" unique_id=1412145852]
+position = Vector2(-0.00390625, -3.9100647e-05)
+scale = Vector2(0.9999996, 0.9999996)
+shape = SubResource("RectangleShape2D_4c57u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Levels/5/Door" unique_id=282403623]
+texture = ExtResource("8_4c57u")
+
+[node name="Door2" type="AnimatableBody2D" parent="Levels/5" unique_id=1675310490]
+z_index = -1
+position = Vector2(5689, 0)
+scale = Vector2(0.125, 0.46)
+script = ExtResource("8_efxa6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/5/Door2" unique_id=1638338718]
+position = Vector2(-0.00390625, -3.9100647e-05)
+scale = Vector2(0.9999996, 0.9999996)
+shape = SubResource("RectangleShape2D_4c57u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Levels/5/Door2" unique_id=1857072807]
+texture = ExtResource("8_4c57u")
+
+[node name="6" type="Node2D" parent="Levels" unique_id=1256109378]
+
+[node name="DoorTwo" type="AnimatableBody2D" parent="Levels/6" unique_id=1371005981]
+z_index = -1
+position = Vector2(10617, -123)
+scale = Vector2(0.125, 0.63)
+script = ExtResource("8_efxa6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/6/DoorTwo" unique_id=1599113832]
+position = Vector2(-0.00390625, -3.9100647e-05)
+scale = Vector2(0.9999996, 0.9999996)
+shape = SubResource("RectangleShape2D_4c57u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Levels/6/DoorTwo" unique_id=1599149125]
+texture = ExtResource("8_4c57u")
+
+[node name="Detection" type="Area2D" parent="Levels/6/DoorTwo" unique_id=1581726236]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/6/DoorTwo/Detection" unique_id=323328189]
+position = Vector2(0, -9.523804)
+scale = Vector2(20.835, 20.835)
+shape = SubResource("RectangleShape2D_d13ii")
+
+[node name="Key2" type="Area2D" parent="Levels/6" unique_id=669367132]
+position = Vector2(4142, 414)
+script = ExtResource("7_ycdy4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/6/Key2" unique_id=2033410214]
+position = Vector2(0, 2.0000305)
+shape = SubResource("CapsuleShape2D_w48qg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Levels/6/Key2" unique_id=2069273697]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("8_w48qg")
 
 [node name="Level" type="Node2D" parent="." unique_id=468675056]
 
@@ -451,5 +618,7 @@ volume_db = -5.0
 autoplay = true
 parameters/looping = true
 
+[connection signal="area_entered" from="Levels/1/Door/Detection" to="Levels/1/Door" method="_on_detection_area_entered"]
+[connection signal="area_entered" from="Levels/6/DoorTwo/Detection" to="Levels/6/DoorTwo" method="_on_detection_area_entered"]
 [connection signal="body_entered" from="Level/ExitArea" to="Level/ExitArea" method="_on_body_entered"]
 [connection signal="level_completed" from="Level/ExitArea" to="." method="_on_finish_level_completed"]

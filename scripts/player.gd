@@ -13,23 +13,20 @@ extends RigidBody2D
 @onready var collision_player := $CollisionPlayer
 @onready var action_player := $ActionPlayer
 @onready var torque_player := $TorquePlayer
-@onready var ray := $GroundRay
 
 var collected_keys: Array[Color] = []
 
 func _ready() -> void:
-	# Enable contact monitoring to detect collisions
 	contact_monitor = true
 	max_contacts_reported = 5
 	body_entered.connect(_on_body_entered)
 
 func add_key(color: Color) -> void:
 	collected_keys.append(color)
-	# Play collect sound (same player as jump is fine)
 	action_player.stream = collect_sound
 	action_player.play()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	handle_spin()
 	handle_jump()
 	clamp_spin()
@@ -65,6 +62,3 @@ func _on_body_entered(_body: Node) -> void:
 
 func clamp_spin():
 	angular_velocity = clamp(angular_velocity, -max_angular_velocity, max_angular_velocity)
-
-func is_on_floor() -> bool:
-	return ray.is_colliding()

@@ -3,23 +3,20 @@ extends Node2D
 @onready var levels := $Levels
 @onready var fade := $CanvasLayer/Fade
 @onready var player := $Player
-
+@onready var bg = $"BG Music"
 func _ready() -> void:
-	# Pass 'true' to skip the fade animation on the very first start
 	_setup_level(true)
 
 func _on_finish_level_completed() -> void:
-	# Standard level transition with fade
 	await fade.fade_out()
 	State.loop_count += 1
 	_setup_level(false)
 	await fade.fade_in()
 
 func _setup_level(immediate: bool) -> void:
+	if not immediate: bg.pitch_scale *= 0.9
 	var total_levels = levels.get_child_count()
 	var level_index: int = int(State.loop_count % total_levels)
-	
-	# Deactivate all, then activate one
 	for i in range(total_levels):
 		var level = levels.get_child(i)
 		_set_level_active(level, i == level_index)
