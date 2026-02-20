@@ -1,95 +1,46 @@
-extends CharacterBody2D
+extends RigidBody2D
 
-@export var gravity := 3000.0
-@export var move_speed := 900.0
-@export var acceleration := 3000.0
-@export var friction := 1200.0
-@export var jump_force := 1200.0
+@export var torque_power := 110000.0
+@export var max_angular_velocity := 24.0
 
-@export var coyote_time := 0.12
-@export var jump_buffer_time := 0.12
+@export var ground_force := 1400.0
+@export var air_force := 200.0
 
-@export var dash_speed := 1500.0
-@export var dash_time := 0.15
-@export var dash_cooldown := 0.4
+@export var jump_impulse := 9000.0
 
-var _coyote_timer := 0.0
-var _jump_buffer_timer := 0.0
-
-var _is_dashing := false
-var _dash_timer := 0.0
-var _dash_cd_timer := 0.0
-var _dash_dir := 0.0
+@onready var ray := $GroundRay
 
 
-func _physics_process(delta: float) -> void:
-	handle_timers(delta)
-	handle_gravity(delta)
+func _physics_process(delta):
+	handle_spin()
 	handle_jump()
-	handle_dash(delta)
-	handle_movement(delta)
-	move_and_slide()
+	clamp_spin()
 
 
-func handle_timers(delta):
-	if is_on_floor():
-		_coyote_timer = coyote_time
-	else:
-		_coyote_timer -= delta
-
-	_jump_buffer_timer -= delta
-	_dash_cd_timer -= delta
-
-
-func handle_gravity(delta):
-	if not is_on_floor() and not _is_dashing:
-		velocity.y += gravity * delta
-
-
-func handle_jump():
-	if Input.is_action_just_pressed("jump"):
-		_jump_buffer_timer = jump_buffer_time
-
-	if _jump_buffer_timer > 0 and _coyote_timer > 0:
-		velocity.y = -jump_force
-		_jump_buffer_timer = 0
-		_coyote_timer = 0
-
-
-func handle_dash(delta):
-	if _is_dashing:
-		_dash_timer -= delta
-		velocity.x = _dash_dir * dash_speed
-		velocity.y = 0
-		if _dash_timer <= 0:
-			_is_dashing = false
-		return
-
-	if Input.is_action_just_pressed("dash") and _dash_cd_timer <= 0:
-		_is_dashing = true
-		_dash_timer = dash_time
-		_dash_cd_timer = dash_cooldown
-		_dash_dir = sign(Input.get_axis("left", "right"))
-		if _dash_dir == 0:
-			_dash_dir = sign(scale.x)
-
-
-func handle_movement(delta):
-	if _is_dashing:
-		return
-
+func handle_spin():
 	var input_dir = Input.get_axis("left", "right")
 
 	if input_dir != 0:
-		velocity.x = move_toward(
-			velocity.x,
-			input_dir * move_speed,
-			acceleration * delta
-		)
-		scale.x = sign(input_dir)
-	else:
-		velocity.x = move_toward(
-			velocity.x,
-			0,
-			friction * delta
-		)
+		apply_torque(input_dir * torque_power)
+
+	# Small directional assist so it doesn't feel like ice
+	var force = ground_force if is_on_floor() else air_force
+	apply_force(Vector2(input_dir * force, 0))
+
+
+func handle_jump():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		apply_impulse(Vector2.ZERO, Vector2(0, -jump_impulse))
+
+
+func clamp_spin():
+	angular_velocity = clamp(
+		angular_velocity,
+		-max_angular_velocity,
+		max_angular_velocity
+	)
+
+
+func is_on_floor() -> bool:
+	return true
+	# return ray.is_colliding()
