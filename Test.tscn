@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://b4r340f8rjppi"]
+
+[ext_resource type="Shader" uid="uid://cs78koen46h0v" path="res://scripts/main.gdshader" id="1_njov2"]
+[ext_resource type="Script" uid="uid://b2cc7bv5144kb" path="res://scripts/fade.gd" id="2_2au82"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8tn2x"]
+shader = ExtResource("1_njov2")
+shader_parameter/brightness = 1.41600006726
+shader_parameter/contrast = 1.046000049685
+shader_parameter/saturation = 1.2410000589475
+shader_parameter/gamma = 1.22900005185773
+shader_parameter/curvature = 0.030000001425
+shader_parameter/corner_soften = 0.06
+shader_parameter/vignette = 0.1550000073625
+shader_parameter/scanline_strength = 0.18000000855
+shader_parameter/scanline_density = 2.2490000830775
+shader_parameter/interlace_strength = 0.730000034675
+shader_parameter/mask_strength = 0.22
+shader_parameter/mask_scale = 1.0
+shader_parameter/chroma_offset_px = 0.2400000114
+shader_parameter/luma_smear_px = 0.6250000296875
+shader_parameter/jitter_px = 0.4830000229425
+shader_parameter/wobble_px = 1.198000056905
+shader_parameter/tape_noise = 0.0650000030875
+shader_parameter/tape_lines = 0.098000004655
+shader_parameter/roll_speed = 0.99600004731
+shader_parameter/roll_strength = 0.02000000095
+shader_parameter/glow_strength = 1.274000060515
+shader_parameter/glow_threshold = 0.6250000296875
+
+[node name="Control" type="Control" unique_id=800539116]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=664208070]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1633528972]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Shader" type="ColorRect" parent="CanvasLayer" unique_id=1056212530]
+material = SubResource("ShaderMaterial_8tn2x")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Fade" type="ColorRect" parent="CanvasLayer" unique_id=134471122]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("2_2au82")

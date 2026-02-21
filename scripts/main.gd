@@ -4,6 +4,7 @@ extends Node2D
 @onready var fade := $CanvasLayer/Fade
 @onready var player := $Player
 @onready var bg = $"BG Music"
+@onready var shader_rect = $"CanvasLayer/Shader"
 func _ready() -> void:
 	_setup_level(true)
 
@@ -14,9 +15,11 @@ func _on_finish_level_completed() -> void:
 	await fade.fade_in()
 
 func _setup_level(immediate: bool) -> void:
-	if not immediate: bg.pitch_scale *= 0.9
+	if not immediate: bg.pitch_scale *= 0.92
 	var total_levels = levels.get_child_count()
 	var level_index: int = int(State.loop_count % total_levels)
+	if(int(State.loop_count) == total_levels):
+		get_tree().change_scene_to_file("res://home.tscn")
 	for i in range(total_levels):
 		var level = levels.get_child(i)
 		_set_level_active(level, i == level_index)
