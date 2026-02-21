@@ -340,51 +340,6 @@ zoom = Vector2(0.4, 0.4)
 [node name="Levels" type="Node2D" parent="." unique_id=994739417]
 z_index = 1
 
-[node name="9" type="Node2D" parent="Levels" unique_id=1117391229]
-
-[node name="Zombie" type="RigidBody2D" parent="Levels/9" unique_id=1014752231]
-z_index = 2
-z_as_relative = false
-position = Vector2(12324, 148)
-angular_damp = 0.842
-
-[node name="Collision" type="CollisionShape2D" parent="Levels/9/Zombie" unique_id=360890160]
-z_index = 1
-shape = SubResource("RectangleShape2D_h2yge")
-
-[node name="Sprite" type="Sprite2D" parent="Levels/9/Zombie" unique_id=1247684146]
-position = Vector2(-3.8146973e-06, 3.8146973e-06)
-scale = Vector2(0.21333334, 0.21333334)
-texture = ExtResource("12_1u8w0")
-
-[node name="FightZombie" type="RigidBody2D" parent="Levels/9" unique_id=1869524151]
-z_index = 2
-z_as_relative = false
-position = Vector2(602, 3778)
-angular_damp = 0.842
-script = ExtResource("14_qsp4k")
-
-[node name="Collision" type="CollisionShape2D" parent="Levels/9/FightZombie" unique_id=2018856296]
-z_index = 1
-shape = SubResource("RectangleShape2D_h2yge")
-
-[node name="Sword" type="Sprite2D" parent="Levels/9/FightZombie" unique_id=1074521230]
-z_index = 1
-position = Vector2(-89, -25)
-rotation = 2.6703537
-scale = Vector2(0.4, -0.392)
-texture = ExtResource("13_lswn8")
-
-[node name="Players" type="Area2D" parent="Levels/9/FightZombie/Sword" unique_id=706507675]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/9/FightZombie/Sword/Players" unique_id=214888713]
-shape = SubResource("CapsuleShape2D_lswn8")
-
-[node name="Sprite" type="Sprite2D" parent="Levels/9/FightZombie" unique_id=749310645]
-position = Vector2(-3.8146973e-06, 3.8146973e-06)
-scale = Vector2(0.21333334, 0.21333334)
-texture = ExtResource("12_1u8w0")
-
 [node name="1" type="Node2D" parent="Levels" unique_id=172870069]
 visible = false
 
@@ -1012,6 +967,52 @@ horizontal_alignment = 1
 position = Vector2(4416, -1138.75)
 scale = Vector2(5.475, 0.911)
 texture = ExtResource("18_d13ii")
+
+[node name="9" type="Node2D" parent="Levels" unique_id=1117391229]
+visible = false
+
+[node name="Zombie" type="RigidBody2D" parent="Levels/9" unique_id=1014752231]
+z_index = 2
+z_as_relative = false
+position = Vector2(12324, 148)
+angular_damp = 0.842
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/9/Zombie" unique_id=360890160]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/9/Zombie" unique_id=1247684146]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.21333334, 0.21333334)
+texture = ExtResource("12_1u8w0")
+
+[node name="FightZombie" type="RigidBody2D" parent="Levels/9" unique_id=1869524151]
+z_index = 2
+z_as_relative = false
+position = Vector2(602, 3778)
+angular_damp = 0.842
+script = ExtResource("14_qsp4k")
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/9/FightZombie" unique_id=2018856296]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sword" type="Sprite2D" parent="Levels/9/FightZombie" unique_id=1074521230]
+z_index = 1
+position = Vector2(-89, -25)
+rotation = 2.6703537
+scale = Vector2(0.4, -0.392)
+texture = ExtResource("13_lswn8")
+
+[node name="Players" type="Area2D" parent="Levels/9/FightZombie/Sword" unique_id=706507675]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/9/FightZombie/Sword/Players" unique_id=214888713]
+shape = SubResource("CapsuleShape2D_lswn8")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/9/FightZombie" unique_id=749310645]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.21333334, 0.21333334)
+texture = ExtResource("12_1u8w0")
 
 [node name="Level" type="Node2D" parent="." unique_id=468675056]
 
