@@ -22,6 +22,7 @@ func fight_mode(en):
 	if state:
 		state.transform.origin = target_pos
 	if en:
+		$"Levels/9/FightZombie".enabledd = true
 		$FightCam.enabled = true
 		$Player/Camera2D.enabled = false
 		$FightCam.make_current()

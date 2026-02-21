@@ -969,7 +969,6 @@ scale = Vector2(5.475, 0.911)
 texture = ExtResource("18_d13ii")
 
 [node name="9" type="Node2D" parent="Levels" unique_id=1117391229]
-visible = false
 
 [node name="Zombie" type="RigidBody2D" parent="Levels/9" unique_id=1014752231]
 z_index = 2

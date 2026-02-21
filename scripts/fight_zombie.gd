@@ -4,7 +4,7 @@ extends RigidBody2D
 @export var help_force := 600.0
 @export var max_angular_velocity := 30.0
 @export var jump_force := 700.0
-
+var enabledd = false
 var player: RigidBody2D
 var main: Node2D
 
@@ -15,9 +15,10 @@ func _ready() -> void:
 	max_contacts_reported = 5
 
 func _physics_process(_delta: float) -> void:
-	move_towards_player()
-	random_twitch()
-	clamp_spin()
+	if enabledd:
+		move_towards_player()
+		random_twitch()
+		clamp_spin()
 
 func move_towards_player():
 	var dir = sign(player.global_position.x - global_position.x)
