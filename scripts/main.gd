@@ -41,7 +41,7 @@ func dmg_player(amt):
 func emotional_damage(win):
 	$DMGAUDIO.play() 
 	inv()
-	await get_tree().create_timer(2.5).timeout
+	await get_tree().create_timer(2.3).timeout
 	if win:
 		$CanvasLayer/Label2.visible = true
 		$CanvasLayer/Label3.visible = true

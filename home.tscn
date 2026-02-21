@@ -1,10 +1,78 @@
 [gd_scene format=3 uid="uid://dp6yd48qf3ige"]
 
-[ext_resource type="Texture2D" uid="uid://qxnbiusk6ohb" path="res://icon.svg" id="1_tt30a"]
+[ext_resource type="Script" uid="uid://dhkb55ax7jbk4" path="res://scripts/creds.gd" id="1_o1ld7"]
+[ext_resource type="Shader" uid="uid://cs78koen46h0v" path="res://scripts/main.gdshader" id="1_tt30a"]
+[ext_resource type="Script" uid="uid://b2cc7bv5144kb" path="res://scripts/fade.gd" id="2_1ey7h"]
+[ext_resource type="FontFile" uid="uid://fdcd18pgyb7u" path="res://assets/sec.otf" id="4_2ayvv"]
 
-[node name="Node2D" type="Node2D" unique_id=1204607356]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ey7h"]
+shader = ExtResource("1_tt30a")
+shader_parameter/brightness = 1.4
+shader_parameter/contrast = 1.04
+shader_parameter/saturation = 1.24
+shader_parameter/gamma = 1.22
+shader_parameter/invert = false
+shader_parameter/curvature = 0.03
+shader_parameter/corner_soften = 0.06
+shader_parameter/vignette = 0.15
+shader_parameter/scanline_strength = 0.95
+shader_parameter/scanline_density = 1.15
+shader_parameter/interlace_strength = 0.2
+shader_parameter/mask_strength = 0.22
+shader_parameter/mask_scale = 1.0
+shader_parameter/chroma_offset_px = 1.6
+shader_parameter/luma_smear_px = 2.2
+shader_parameter/jitter_px = 1.8
+shader_parameter/wobble_px = 1.5
+shader_parameter/tape_noise = 0.22
+shader_parameter/tape_lines = 0.35
+shader_parameter/roll_speed = 0.1
+shader_parameter/roll_strength = 0.15
+shader_parameter/glow_strength = 0.25
+shader_parameter/glow_threshold = 0.65
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1136883845]
-texture = ExtResource("1_tt30a")
+[node name="Control" type="Control" unique_id=406153978]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o1ld7")
 
-[node name="Node2D" type="Node2D" parent="." unique_id=280358181]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=663658665]
+material = SubResource("ShaderMaterial_1ey7h")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fade" type="ColorRect" parent="." unique_id=672812350]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("2_1ey7h")
+
+[node name="CreditsContainer" type="MarginContainer" parent="." unique_id=889832432]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CreditsContainer" unique_id=2138315740]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("4_2ayvv")
+theme_override_font_sizes/font_size = 104
+text = "Hello"
+horizontal_alignment = 1
+vertical_alignment = 1

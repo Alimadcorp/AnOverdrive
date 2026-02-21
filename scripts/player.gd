@@ -86,12 +86,13 @@ func clamp_spin():
 	angular_velocity = clamp(angular_velocity, -max_angular_velocity, max_angular_velocity)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print(body.name)
-	if(body.name == "FightZombie"):
-		main.dmg_zombie(randf_range(3,10))
+	if body.name == "FightZombie":
+		var spin_bonus = abs(angular_velocity) * 0.5 
+		var total_dmg = randf_range(3, 10) + spin_bonus
+		main.dmg_zombie(total_dmg)
 
 func _on_players_body_entered(body: Node2D) -> void:
-	print(body.name)
-	if(body.name == "Player"):
-		main.dmg_player(randf_range(3,10))
-	
+	if body.name == "Player":
+		var buzzsaw_bonus = abs(angular_velocity) * 0.8
+		var total_dmg = randf_range(3, 10) + buzzsaw_bonus
+		main.dmg_player(total_dmg)
