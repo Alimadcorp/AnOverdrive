@@ -58,7 +58,9 @@ func handle_jump():
 
 func _on_body_entered(body: Node) -> void:
 	if(body.name == "Zombie"):
-		main.fight_mode(true)
+		if not main.ph.get_parent().visible:
+			body.queue_free()
+			main.fight_mode(true)
 	else:
 		var linear_impact = _last_velocity.length()
 		var tangential_impact = abs(_last_angular_velocity) * player_radius
@@ -84,10 +86,12 @@ func clamp_spin():
 	angular_velocity = clamp(angular_velocity, -max_angular_velocity, max_angular_velocity)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if(body.name == "Player"):
-		main.dmg_player(randf_range(3,10))
+	print(body.name)
+	if(body.name == "FightZombie"):
+		main.dmg_zombie(randf_range(3,10))
 
 func _on_players_body_entered(body: Node2D) -> void:
-	if(body.name == "Zombie"):
-		main.dmg_zombie(randf_range(3,10))
+	print(body.name)
+	if(body.name == "Player"):
+		main.dmg_player(randf_range(3,10))
 	

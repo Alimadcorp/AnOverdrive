@@ -9,6 +9,7 @@ uniform float brightness : hint_range(0.0, 2.0) = 1.4;
 uniform float contrast   : hint_range(0.0, 2.0) = 1.04;
 uniform float saturation : hint_range(0.0, 2.0) = 1.24;
 uniform float gamma      : hint_range(0.2, 3.0) = 1.22;
+uniform bool invert;
 
 // --- CRT geometry / lens ---
 uniform float curvature     : hint_range(0.0, 0.40) = 0.03;
@@ -188,6 +189,7 @@ float corner_mask = 1.0 - smoothstep(1.0 - corner_soften, 1.0, edge);
 
 	// Apply bounds + rounded corners (outside = black)
 	col *= in_bounds * corner_mask;
-
+	if(invert){ col = vec3(1.0) - col.rgb; }
+		
 	COLOR = vec4(col, 1.0);
 }
