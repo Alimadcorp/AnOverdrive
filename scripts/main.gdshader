@@ -5,15 +5,15 @@ render_mode unshaded;
 uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 
 // --- Color controls ---
-uniform float brightness : hint_range(0.0, 2.0) = 1.02;
-uniform float contrast   : hint_range(0.0, 2.0) = 1.08;
-uniform float saturation : hint_range(0.0, 2.0) = 1.10;
-uniform float gamma      : hint_range(0.2, 3.0) = 1.05;
+uniform float brightness : hint_range(0.0, 2.0) = 1.4;
+uniform float contrast   : hint_range(0.0, 2.0) = 1.04;
+uniform float saturation : hint_range(0.0, 2.0) = 1.24;
+uniform float gamma      : hint_range(0.2, 3.0) = 1.22;
 
 // --- CRT geometry / lens ---
-uniform float curvature     : hint_range(0.0, 0.40) = 0.14;
+uniform float curvature     : hint_range(0.0, 0.40) = 0.03;
 uniform float corner_soften : hint_range(0.0, 0.20) = 0.06;
-uniform float vignette      : hint_range(0.0, 1.00) = 0.38;
+uniform float vignette      : hint_range(0.0, 1.00) = 0.15;
 
 // --- Scanlines / phosphor ---
 uniform float scanline_strength : hint_range(0.0, 2.0) = 0.95;

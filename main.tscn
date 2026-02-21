@@ -244,15 +244,15 @@ size = Vector2(274.75, 1657.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5vw27"]
 shader = ExtResource("6_272bh")
-shader_parameter/brightness = 1.41600006726
-shader_parameter/contrast = 1.046000049685
-shader_parameter/saturation = 1.2410000589475
-shader_parameter/gamma = 1.22900005185773
+shader_parameter/brightness = 1.4
+shader_parameter/contrast = 1.04
+shader_parameter/saturation = 1.24
+shader_parameter/gamma = 1.22
 shader_parameter/curvature = 0.030000001425
 shader_parameter/corner_soften = 0.06
 shader_parameter/vignette = 0.1550000073625
 shader_parameter/scanline_strength = 0.18000000855
-shader_parameter/scanline_density = 2.2490000830775
+shader_parameter/scanline_density = 2.59200009937
 shader_parameter/interlace_strength = 0.730000034675
 shader_parameter/mask_strength = 0.22
 shader_parameter/mask_scale = 1.0
@@ -260,10 +260,10 @@ shader_parameter/chroma_offset_px = 0.2400000114
 shader_parameter/luma_smear_px = 0.6250000296875
 shader_parameter/jitter_px = 0.4830000229425
 shader_parameter/wobble_px = 1.198000056905
-shader_parameter/tape_noise = 0.0
-shader_parameter/tape_lines = 0.0
-shader_parameter/roll_speed = 0.0
-shader_parameter/roll_strength = 0.0
+shader_parameter/tape_noise = 0.1270000060325
+shader_parameter/tape_lines = 0.35
+shader_parameter/roll_speed = 0.1
+shader_parameter/roll_strength = 0.15
 shader_parameter/glow_strength = 1.274000060515
 shader_parameter/glow_threshold = 0.6250000296875
 
@@ -273,6 +273,7 @@ script = ExtResource("1_lquwl")
 [node name="Player" type="RigidBody2D" parent="." unique_id=1849133963]
 z_index = 2
 z_as_relative = false
+angular_damp = 0.842
 script = ExtResource("1_ig7tw")
 help_force = 600.0
 collision_sounds = Array[AudioStream]([ExtResource("3_getpj"), ExtResource("4_ryguw"), ExtResource("5_d13ii"), ExtResource("6_1u8w0"), ExtResource("7_0odxb")])

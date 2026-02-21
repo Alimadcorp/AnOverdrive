@@ -5,6 +5,7 @@ extends Node2D
 @onready var player := $Player
 @onready var bg = $"BG Music"
 @onready var shader_rect = $"CanvasLayer/Shader"
+var property_list = ["curvature", "scanline_density", "interlace_strength", "chroma_offset_px", "wobble_px", "jitter_px", "tape_noise"]
 func _ready() -> void:
 	_setup_level(true)
 
@@ -16,6 +17,10 @@ func _on_finish_level_completed() -> void:
 
 func _setup_level(immediate: bool) -> void:
 	if not immediate: bg.pitch_scale *= 0.92
+	for j in range(7):
+		for i in property_list:
+			var lval = shader_rect.material.get_shader_parameter(i)
+			shader_rect.material.set_shader_parameter(i, lval * 1.3)
 	var total_levels = levels.get_child_count()
 	var level_index: int = int(State.loop_count % total_levels)
 	if(int(State.loop_count) == total_levels):
