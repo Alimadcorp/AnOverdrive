@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c4fw1a5lbo44a"
+path="res://.godot/imported/Top Gun Anthem by Harold Faltermeyer (2016).mp3-7e3247793fe08dd9737f0112d5690ee8.mp3str"
+
+[deps]
+
+source_file="res://scripts/Top Gun Anthem by Harold Faltermeyer (2016).mp3"
+dest_files=["res://.godot/imported/Top Gun Anthem by Harold Faltermeyer (2016).mp3-7e3247793fe08dd9737f0112d5690ee8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

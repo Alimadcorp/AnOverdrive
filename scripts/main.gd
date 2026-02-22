@@ -85,6 +85,10 @@ func _on_finish_level_completed() -> void:
 		shader_rect.material.set_shader_parameter(i, lval * 1.2)
 	await fade.fade_in()
 
+func _on_restart() -> void:
+	await fade.fade_out()
+	get_tree().reload_current_scene()
+
 func _setup_level(immediate: bool) -> void:
 	if not immediate: bg.pitch_scale *= 0.92
 	var total_levels = levels.get_child_count()

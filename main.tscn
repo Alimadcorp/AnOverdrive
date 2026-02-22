@@ -343,6 +343,19 @@ z_index = 1
 [node name="1" type="Node2D" parent="Levels" unique_id=172870069]
 visible = false
 
+[node name="Label3" type="Label" parent="Levels/1" unique_id=869472267]
+offset_left = -417.0
+offset_top = -396.0
+offset_right = 412.0
+offset_bottom = -225.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.8745098)
+theme_override_fonts/font = ExtResource("17_ryguw")
+theme_override_font_sizes/font_size = 62
+text = "WASD to move, R to reset btw
+enjoy :3c
+and dont you dare leave w/out finishing"
+horizontal_alignment = 1
+
 [node name="2" type="Node2D" parent="Levels" unique_id=2064788577]
 visible = false
 
@@ -969,6 +982,7 @@ scale = Vector2(5.475, 0.911)
 texture = ExtResource("18_d13ii")
 
 [node name="9" type="Node2D" parent="Levels" unique_id=1117391229]
+visible = false
 
 [node name="Zombie" type="RigidBody2D" parent="Levels/9" unique_id=1014752231]
 z_index = 2
@@ -1098,6 +1112,7 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
 grow_horizontal = 0
 grow_vertical = 2
 value = 100.0

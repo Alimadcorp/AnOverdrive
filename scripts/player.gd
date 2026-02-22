@@ -30,13 +30,16 @@ func add_key(color: Color) -> void:
 	collected_keys.append(color)
 	action_player.stream = collect_sound
 	action_player.play()
-
+var restarting = false
 func _physics_process(_delta):
 	handle_spin()
 	handle_jump()
 	clamp_spin()
 	_last_velocity = linear_velocity
 	_last_angular_velocity = angular_velocity
+	if Input.is_action_just_pressed("reset") and !restarting:
+		restarting = true
+		main._on_restart()
 
 func handle_spin():
 	var input_dir = Input.get_axis("left", "right")
