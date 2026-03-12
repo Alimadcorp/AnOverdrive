@@ -4,6 +4,7 @@
 [ext_resource type="Shader" uid="uid://cs78koen46h0v" path="res://scripts/main.gdshader" id="1_tt30a"]
 [ext_resource type="Script" uid="uid://b2cc7bv5144kb" path="res://scripts/fade.gd" id="2_1ey7h"]
 [ext_resource type="FontFile" uid="uid://fdcd18pgyb7u" path="res://assets/sec.otf" id="4_2ayvv"]
+[ext_resource type="Script" uid="uid://cd3l6ickmj0gu" path="res://scripts/usnm.gd" id="5_lxycn"]
 [ext_resource type="AudioStream" uid="uid://c4fw1a5lbo44a" path="res://scripts/Top Gun Anthem by Harold Faltermeyer (2016).mp3" id="5_w1mvj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1ey7h"]
@@ -14,19 +15,19 @@ shader_parameter/saturation = 1.24
 shader_parameter/gamma = 1.22
 shader_parameter/invert = false
 shader_parameter/curvature = 0.03
-shader_parameter/corner_soften = 0.06
+shader_parameter/corner_soften = 0.0470000022325
 shader_parameter/vignette = 0.15
-shader_parameter/scanline_strength = 0.95
-shader_parameter/scanline_density = 1.15
-shader_parameter/interlace_strength = 0.2
-shader_parameter/mask_strength = 0.22
-shader_parameter/mask_scale = 1.0
-shader_parameter/chroma_offset_px = 1.6
-shader_parameter/luma_smear_px = 2.2
-shader_parameter/jitter_px = 1.8
+shader_parameter/scanline_strength = 0.55200002622
+shader_parameter/scanline_density = 0.8510000166725
+shader_parameter/interlace_strength = 0.11600000551
+shader_parameter/mask_strength = 0.118000005605
+shader_parameter/mask_scale = 0.89200001862
+shader_parameter/chroma_offset_px = 1.1250000534375
+shader_parameter/luma_smear_px = 1.1350000539125
+shader_parameter/jitter_px = 1.1270000535325
 shader_parameter/wobble_px = 1.5
-shader_parameter/tape_noise = 0.22
-shader_parameter/tape_lines = 0.35
+shader_parameter/tape_noise = 0.1450000068875
+shader_parameter/tape_lines = 0.222000010545
 shader_parameter/roll_speed = 0.1
 shader_parameter/roll_strength = 0.15
 shader_parameter/glow_strength = 0.25
@@ -56,62 +57,6 @@ stream = ExtResource("5_w1mvj")
 autoplay = true
 playback_type = 1
 parameters/looping = true
-
-[node name="Menu" type="ColorRect" parent="." unique_id=643854190]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.3254902)
-
-[node name="MarginContainer" type="MarginContainer" parent="Menu" unique_id=2111836379]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 50
-
-[node name="Label" type="Label" parent="Menu/MarginContainer" unique_id=1353478965]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 0.7176471)
-theme_override_fonts/font = ExtResource("4_2ayvv")
-theme_override_font_sizes/font_size = 87
-text = "Swiveling Escape
-Remake"
-horizontal_alignment = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Menu/MarginContainer" unique_id=1845761173]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme_override_constants/separation = 22
-
-[node name="play" type="Button" parent="Menu/MarginContainer/VBoxContainer" unique_id=282190722]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.6295529, 0.87728834, 0.7811694, 1)
-theme_override_fonts/font = ExtResource("4_2ayvv")
-theme_override_font_sizes/font_size = 92
-text = "Play Again"
-flat = true
-alignment = 0
-
-[node name="exit" type="Button" parent="Menu/MarginContainer/VBoxContainer" unique_id=552473406]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.6295529, 0.87728834, 0.7811694, 1)
-theme_override_fonts/font = ExtResource("4_2ayvv")
-theme_override_font_sizes/font_size = 92
-text = "Exit"
-flat = true
-alignment = 0
 
 [node name="CreditsContainer" type="VBoxContainer" parent="." unique_id=925731513]
 z_index = 1
@@ -222,6 +167,76 @@ text = "             First Version?"
 underline = 1
 uri = "https://alimad.itch.io/swiveling-escape"
 
+[node name="Menu" type="ColorRect" parent="." unique_id=643854190]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.3254902)
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu" unique_id=2111836379]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="TextEdit" type="TextEdit" parent="Menu/MarginContainer" unique_id=1898413774]
+custom_minimum_size = Vector2(317.235, 46.59)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("4_2ayvv")
+theme_override_font_sizes/font_size = 41
+placeholder_text = "Enter a username"
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+script = ExtResource("5_lxycn")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="Menu/MarginContainer/TextEdit" unique_id=219260163]
+
+[node name="Label" type="Label" parent="Menu/MarginContainer" unique_id=1353478965]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.7176471)
+theme_override_fonts/font = ExtResource("4_2ayvv")
+theme_override_font_sizes/font_size = 87
+text = "Swiveling Escape
+Remake"
+horizontal_alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/MarginContainer" unique_id=1845761173]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/separation = 22
+
+[node name="play" type="Button" parent="Menu/MarginContainer/VBoxContainer" unique_id=282190722]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.6295529, 0.87728834, 0.7811694, 1)
+theme_override_fonts/font = ExtResource("4_2ayvv")
+theme_override_font_sizes/font_size = 92
+text = "Play Again"
+flat = true
+alignment = 0
+
+[node name="exit" type="Button" parent="Menu/MarginContainer/VBoxContainer" unique_id=552473406]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.6295529, 0.87728834, 0.7811694, 1)
+theme_override_fonts/font = ExtResource("4_2ayvv")
+theme_override_font_sizes/font_size = 92
+text = "Exit"
+flat = true
+alignment = 0
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=663658665]
 material = SubResource("ShaderMaterial_1ey7h")
 layout_mode = 1
@@ -232,5 +247,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[connection signal="request_completed" from="Menu/MarginContainer/TextEdit/HTTPRequest" to="Menu/MarginContainer/TextEdit" method="_on_http_request_request_completed"]
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/exit" to="." method="_on_exit_pressed"]

@@ -30,7 +30,9 @@ func add_key(color: Color) -> void:
 	collected_keys.append(color)
 	action_player.stream = collect_sound
 	action_player.play()
+
 var restarting = false
+
 func _physics_process(_delta):
 	handle_spin()
 	handle_jump()
@@ -43,7 +45,6 @@ func _physics_process(_delta):
 
 func handle_spin():
 	var input_dir = Input.get_axis("left", "right")
-
 	if input_dir != 0:
 		apply_torque(input_dir * torque_power)
 		apply_force(Vector2(input_dir * help_force, 0))
