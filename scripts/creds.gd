@@ -30,12 +30,19 @@ func _ready() -> void:
 	start_credits()
 	shadr = shader_mat.material
 
+var property_list = ["curvature", "scanline_density", "interlace_strength", "chroma_offset_px", "wobble_px", "jitter_px", "tape_noise"]
 
 func _on_play_pressed() -> void:
 	await $Fade.fade_in()
+	State.loop_count = 1
 	get_tree().change_scene_to_file("res://main.tscn")
 
 func _on_exit_pressed() -> void:
+	for i in property_list:
+		var lval = shadr.get_shader_parameter(i)
+		shadr.set_shader_parameter(i, lval * 6)
 	shadr.set_shader_parameter("invert", true)
-	await get_tree().create_timer(1000).timeout
-	_on_play_pressed()
+	State.loop_count = 0
+	await get_tree().create_timer(1).timeout
+	await $Fade.fade_in()
+	get_tree().change_scene_to_file("res://main.tscn")

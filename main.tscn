@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://baedlvugu51tk" path="res://assets/sauce.jpg" id="18_d13ii"]
 [ext_resource type="Texture2D" uid="uid://doo55t3s58rwb" path="res://assets/hlt.png" id="23_a6jrf"]
 [ext_resource type="Texture2D" uid="uid://c3rl8rkyoqxvg" path="res://assets/hlt - Copy.png" id="23_xuqvo"]
+[ext_resource type="Script" uid="uid://pame6bcg0ppy" path="res://online.gd" id="24_seu75"]
 [ext_resource type="Texture2D" uid="uid://bv6sdhmaus24a" path="res://assets/Fight bg.png" id="25_0odxb"]
 [ext_resource type="AudioStream" uid="uid://cc8375rpce1gf" path="res://assets/GTA V wasted SFX.mp3" id="29_kq58d"]
 
@@ -40,7 +41,10 @@ radius = 20.0896
 height = 346.87695
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dg77c"]
-friction = 0.44
+friction = 0.64
+rough = true
+bounce = 0.39
+absorbent = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
 size = Vector2(250, 25.99997)
@@ -254,6 +258,7 @@ sources/0 = SubResource("TileSetAtlasSource_lquwl")
 size = Vector2(274.75, 1657.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5vw27"]
+resource_local_to_scene = true
 shader = ExtResource("6_272bh")
 shader_parameter/brightness = 1.4
 shader_parameter/contrast = 1.04
@@ -340,8 +345,1244 @@ zoom = Vector2(0.4, 0.4)
 [node name="Levels" type="Node2D" parent="." unique_id=994739417]
 z_index = 1
 
+[node name="0" type="Node2D" parent="Levels" unique_id=2063264017]
+
+[node name="Label3" type="Label" parent="Levels/0" unique_id=836596311]
+offset_left = -410.0
+offset_top = -330.0
+offset_right = 419.0
+offset_bottom = -159.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.8745098)
+theme_override_fonts/font = ExtResource("17_ryguw")
+theme_override_font_sizes/font_size = 62
+text = "There is now a level 0"
+horizontal_alignment = 1
+
+[node name="Box" type="RigidBody2D" parent="Levels/0" unique_id=10717945]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box" unique_id=1969301274]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box" unique_id=1792825485]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box2" type="RigidBody2D" parent="Levels/0" unique_id=1865764732]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box2" unique_id=191482561]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box2" unique_id=844890090]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box3" type="RigidBody2D" parent="Levels/0" unique_id=1094835919]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box3" unique_id=1054366088]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box3" unique_id=2013036451]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box4" type="RigidBody2D" parent="Levels/0" unique_id=1288863067]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box4" unique_id=1968817252]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box4" unique_id=755617826]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box5" type="RigidBody2D" parent="Levels/0" unique_id=1122074270]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box5" unique_id=1164657238]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box5" unique_id=1836994037]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box6" type="RigidBody2D" parent="Levels/0" unique_id=1228168567]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box6" unique_id=1370668803]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box6" unique_id=1761522249]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box7" type="RigidBody2D" parent="Levels/0" unique_id=2015442097]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box7" unique_id=1800791951]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box7" unique_id=694258431]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box8" type="RigidBody2D" parent="Levels/0" unique_id=1864227524]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box8" unique_id=1903209298]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box8" unique_id=1261295341]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box9" type="RigidBody2D" parent="Levels/0" unique_id=891163048]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box9" unique_id=1175774267]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box9" unique_id=1410613865]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box10" type="RigidBody2D" parent="Levels/0" unique_id=163260991]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box10" unique_id=1624117823]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box10" unique_id=95633455]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box11" type="RigidBody2D" parent="Levels/0" unique_id=1068986230]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box11" unique_id=464771535]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box11" unique_id=1456954878]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box12" type="RigidBody2D" parent="Levels/0" unique_id=51380575]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box12" unique_id=1615592522]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box12" unique_id=2065955625]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box13" type="RigidBody2D" parent="Levels/0" unique_id=1973603828]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box13" unique_id=121564426]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box13" unique_id=1577077094]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box14" type="RigidBody2D" parent="Levels/0" unique_id=821441284]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box14" unique_id=155899287]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box14" unique_id=1518752249]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box15" type="RigidBody2D" parent="Levels/0" unique_id=1219429693]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box15" unique_id=1735055796]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box15" unique_id=1306761878]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box16" type="RigidBody2D" parent="Levels/0" unique_id=1955609070]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box16" unique_id=1225217104]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box16" unique_id=1665395446]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box17" type="RigidBody2D" parent="Levels/0" unique_id=620652910]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box17" unique_id=1304598894]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box17" unique_id=62059827]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box18" type="RigidBody2D" parent="Levels/0" unique_id=533820744]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box18" unique_id=1650086290]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box18" unique_id=2012388109]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box19" type="RigidBody2D" parent="Levels/0" unique_id=1563306798]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box19" unique_id=1974228744]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box19" unique_id=1747827046]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box20" type="RigidBody2D" parent="Levels/0" unique_id=1883819406]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box20" unique_id=719013035]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box20" unique_id=1429018262]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box21" type="RigidBody2D" parent="Levels/0" unique_id=1372435564]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box21" unique_id=21466553]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box21" unique_id=951788609]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box22" type="RigidBody2D" parent="Levels/0" unique_id=251311252]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box22" unique_id=1944563414]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box22" unique_id=377780572]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box23" type="RigidBody2D" parent="Levels/0" unique_id=422867404]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box23" unique_id=1100139034]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box23" unique_id=988290578]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box24" type="RigidBody2D" parent="Levels/0" unique_id=1770593745]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box24" unique_id=1207273253]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box24" unique_id=752822317]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box25" type="RigidBody2D" parent="Levels/0" unique_id=1998476299]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box25" unique_id=559391625]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box25" unique_id=604749041]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box26" type="RigidBody2D" parent="Levels/0" unique_id=2077865024]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box26" unique_id=230570244]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box26" unique_id=749033701]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box27" type="RigidBody2D" parent="Levels/0" unique_id=1854126872]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box27" unique_id=1028602653]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box27" unique_id=978528514]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box28" type="RigidBody2D" parent="Levels/0" unique_id=1949688715]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box28" unique_id=795958518]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box28" unique_id=945060521]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box29" type="RigidBody2D" parent="Levels/0" unique_id=1678468660]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box29" unique_id=861274140]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box29" unique_id=1679113948]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box30" type="RigidBody2D" parent="Levels/0" unique_id=1107390695]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box30" unique_id=1214215598]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box30" unique_id=1436678934]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box31" type="RigidBody2D" parent="Levels/0" unique_id=1463468463]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box31" unique_id=1464888594]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box31" unique_id=2120724556]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box32" type="RigidBody2D" parent="Levels/0" unique_id=290328173]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box32" unique_id=2025810891]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box32" unique_id=1214439121]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box33" type="RigidBody2D" parent="Levels/0" unique_id=1413302394]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box33" unique_id=144744387]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box33" unique_id=984968100]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box34" type="RigidBody2D" parent="Levels/0" unique_id=1054612375]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box34" unique_id=2096418288]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box34" unique_id=915007142]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box35" type="RigidBody2D" parent="Levels/0" unique_id=1842859193]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box35" unique_id=897926377]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box35" unique_id=1844658331]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box36" type="RigidBody2D" parent="Levels/0" unique_id=1593449399]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box36" unique_id=2093561714]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box36" unique_id=706698491]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box37" type="RigidBody2D" parent="Levels/0" unique_id=609285479]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box37" unique_id=1623048641]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box37" unique_id=765278727]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box38" type="RigidBody2D" parent="Levels/0" unique_id=1705714093]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box38" unique_id=1660390670]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box38" unique_id=1345960844]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box39" type="RigidBody2D" parent="Levels/0" unique_id=727438806]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box39" unique_id=1388029352]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box39" unique_id=2084526558]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box40" type="RigidBody2D" parent="Levels/0" unique_id=1881143692]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box40" unique_id=1841140049]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box40" unique_id=33566433]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box41" type="RigidBody2D" parent="Levels/0" unique_id=752143237]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box41" unique_id=746916228]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box41" unique_id=928161881]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box42" type="RigidBody2D" parent="Levels/0" unique_id=1549528361]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box42" unique_id=1989782855]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box42" unique_id=2102928033]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box43" type="RigidBody2D" parent="Levels/0" unique_id=1673014647]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box43" unique_id=615109366]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box43" unique_id=1186061729]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box44" type="RigidBody2D" parent="Levels/0" unique_id=1803232619]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box44" unique_id=699079217]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box44" unique_id=906369580]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box45" type="RigidBody2D" parent="Levels/0" unique_id=1392530796]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box45" unique_id=782487608]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box45" unique_id=653967253]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box46" type="RigidBody2D" parent="Levels/0" unique_id=941883862]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box46" unique_id=1484186003]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box46" unique_id=974370892]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box47" type="RigidBody2D" parent="Levels/0" unique_id=1057500219]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box47" unique_id=1272218505]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box47" unique_id=1094758527]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box48" type="RigidBody2D" parent="Levels/0" unique_id=842183156]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box48" unique_id=690555295]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box48" unique_id=1188848729]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box49" type="RigidBody2D" parent="Levels/0" unique_id=1295235323]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box49" unique_id=231525405]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box49" unique_id=585892964]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box50" type="RigidBody2D" parent="Levels/0" unique_id=2126041205]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box50" unique_id=979858090]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box50" unique_id=1354594864]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box51" type="RigidBody2D" parent="Levels/0" unique_id=457106360]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box51" unique_id=968849149]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box51" unique_id=941438855]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box52" type="RigidBody2D" parent="Levels/0" unique_id=948795353]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box52" unique_id=868861301]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box52" unique_id=1719745009]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box53" type="RigidBody2D" parent="Levels/0" unique_id=1080428829]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box53" unique_id=1005176653]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box53" unique_id=19886891]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box54" type="RigidBody2D" parent="Levels/0" unique_id=1736169839]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box54" unique_id=1709276420]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box54" unique_id=611129365]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box55" type="RigidBody2D" parent="Levels/0" unique_id=1992227863]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box55" unique_id=802096106]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box55" unique_id=894128828]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box56" type="RigidBody2D" parent="Levels/0" unique_id=663247916]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box56" unique_id=347274478]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box56" unique_id=778003983]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box57" type="RigidBody2D" parent="Levels/0" unique_id=2060523901]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box57" unique_id=2089349301]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box57" unique_id=1458101313]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box58" type="RigidBody2D" parent="Levels/0" unique_id=295630425]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box58" unique_id=1719362277]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box58" unique_id=1506170589]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box59" type="RigidBody2D" parent="Levels/0" unique_id=387857383]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box59" unique_id=100524539]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box59" unique_id=1190132281]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box60" type="RigidBody2D" parent="Levels/0" unique_id=1619970144]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box60" unique_id=200774830]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box60" unique_id=1387468624]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box61" type="RigidBody2D" parent="Levels/0" unique_id=1326688786]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box61" unique_id=1193076026]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box61" unique_id=1748920586]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box62" type="RigidBody2D" parent="Levels/0" unique_id=2050928613]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box62" unique_id=1284577043]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box62" unique_id=350254461]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box63" type="RigidBody2D" parent="Levels/0" unique_id=221239980]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box63" unique_id=1596306978]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box63" unique_id=381372158]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box64" type="RigidBody2D" parent="Levels/0" unique_id=978733412]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box64" unique_id=1432798442]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box64" unique_id=1864912819]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box65" type="RigidBody2D" parent="Levels/0" unique_id=1547897388]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box65" unique_id=695639516]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box65" unique_id=1422843790]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box66" type="RigidBody2D" parent="Levels/0" unique_id=512371216]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box66" unique_id=1385528017]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box66" unique_id=826941460]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box67" type="RigidBody2D" parent="Levels/0" unique_id=356573373]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box67" unique_id=538966803]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box67" unique_id=1594434236]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box68" type="RigidBody2D" parent="Levels/0" unique_id=524949045]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box68" unique_id=870255969]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box68" unique_id=455128261]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box69" type="RigidBody2D" parent="Levels/0" unique_id=284897964]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box69" unique_id=639097648]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box69" unique_id=402508652]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box70" type="RigidBody2D" parent="Levels/0" unique_id=1627050906]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box70" unique_id=1910795002]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box70" unique_id=2041723464]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box71" type="RigidBody2D" parent="Levels/0" unique_id=1630619089]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box71" unique_id=233720750]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box71" unique_id=1046080995]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
+[node name="Box72" type="RigidBody2D" parent="Levels/0" unique_id=823574834]
+z_index = 2
+z_as_relative = false
+position = Vector2(2943, -108)
+mass = 0.375
+physics_material_override = SubResource("PhysicsMaterial_dg77c")
+angular_damp = 0.22
+
+[node name="Collision" type="CollisionShape2D" parent="Levels/0/Box72" unique_id=1201178075]
+z_index = 1
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite" type="Sprite2D" parent="Levels/0/Box72" unique_id=853220366]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.569, 0.569)
+texture = ExtResource("4_dg77c")
+
 [node name="1" type="Node2D" parent="Levels" unique_id=172870069]
-visible = false
 
 [node name="Label3" type="Label" parent="Levels/1" unique_id=869472267]
 offset_left = -417.0
@@ -357,7 +1598,6 @@ and dont you dare leave w/out finishing"
 horizontal_alignment = 1
 
 [node name="2" type="Node2D" parent="Levels" unique_id=2064788577]
-visible = false
 
 [node name="Box" type="RigidBody2D" parent="Levels/2" unique_id=35273087]
 z_index = 2
@@ -377,7 +1617,6 @@ scale = Vector2(0.569, 0.569)
 texture = ExtResource("4_dg77c")
 
 [node name="3" type="Node2D" parent="Levels" unique_id=644860429]
-visible = false
 
 [node name="Box" type="RigidBody2D" parent="Levels/3" unique_id=497596478]
 z_index = 2
@@ -448,7 +1687,6 @@ scale = Vector2(0.569, 0.569)
 texture = ExtResource("4_dg77c")
 
 [node name="4" type="Node2D" parent="Levels" unique_id=1644491653]
-visible = false
 
 [node name="Box" type="RigidBody2D" parent="Levels/4" unique_id=1730880734]
 z_index = 2
@@ -638,7 +1876,6 @@ scale = Vector2(0.569, 0.569)
 texture = ExtResource("4_dg77c")
 
 [node name="5" type="Node2D" parent="Levels" unique_id=1705573963]
-visible = false
 
 [node name="Box2" type="RigidBody2D" parent="Levels/5" unique_id=2079270107]
 z_index = 2
@@ -658,7 +1895,7 @@ scale = Vector2(0.569, 0.569)
 texture = ExtResource("4_dg77c")
 
 [node name="Button" type="StaticBody2D" parent="Levels/5" unique_id=238254050]
-position = Vector2(3824, 510.99997)
+position = Vector2(3824, 523)
 script = ExtResource("6_kek77")
 linked_door = NodePath("../Door")
 
@@ -693,7 +1930,6 @@ shape = SubResource("RectangleShape2D_4c57u")
 texture = ExtResource("8_4c57u")
 
 [node name="6" type="Node2D" parent="Levels" unique_id=1770273658]
-visible = false
 
 [node name="Box3" type="RigidBody2D" parent="Levels/6" unique_id=179902453]
 z_index = 2
@@ -730,7 +1966,7 @@ scale = Vector2(0.569, 0.569)
 texture = ExtResource("4_dg77c")
 
 [node name="Button" type="StaticBody2D" parent="Levels/6" unique_id=142638876]
-position = Vector2(4204, 510.99997)
+position = Vector2(4204, 522)
 script = ExtResource("6_kek77")
 linked_door = NodePath("../Door2")
 
@@ -750,7 +1986,7 @@ scale = Vector2(1.953125, 0.23437503)
 texture = ExtResource("6_5vw27")
 
 [node name="Button2" type="StaticBody2D" parent="Levels/6" unique_id=1008132087]
-position = Vector2(3714, 510.99997)
+position = Vector2(3714, 524)
 script = ExtResource("6_kek77")
 linked_door = NodePath("../Door")
 
@@ -800,7 +2036,6 @@ shape = SubResource("RectangleShape2D_4c57u")
 texture = ExtResource("8_4c57u")
 
 [node name="7" type="Node2D" parent="Levels" unique_id=446683728]
-visible = false
 
 [node name="Box3" type="RigidBody2D" parent="Levels/7" unique_id=78967659]
 z_index = 2
@@ -820,7 +2055,7 @@ scale = Vector2(0.569, 0.569)
 texture = ExtResource("4_dg77c")
 
 [node name="Button" type="StaticBody2D" parent="Levels/7" unique_id=777470663]
-position = Vector2(4204, 510.99997)
+position = Vector2(4205, 523)
 script = ExtResource("6_kek77")
 linked_door = NodePath("../Door2")
 
@@ -840,7 +2075,7 @@ scale = Vector2(1.953125, 0.23437503)
 texture = ExtResource("6_5vw27")
 
 [node name="Button2" type="StaticBody2D" parent="Levels/7" unique_id=52002166]
-position = Vector2(3714, 510.99997)
+position = Vector2(3715, 523)
 script = ExtResource("6_kek77")
 linked_door = NodePath("../Door")
 
@@ -893,7 +2128,6 @@ shape = SubResource("RectangleShape2D_4c57u")
 texture = ExtResource("8_4c57u")
 
 [node name="8" type="Node2D" parent="Levels" unique_id=1150388195]
-visible = false
 
 [node name="Box4" type="RigidBody2D" parent="Levels/8" unique_id=548334826]
 z_index = 2
@@ -982,7 +2216,6 @@ scale = Vector2(5.475, 0.911)
 texture = ExtResource("18_d13ii")
 
 [node name="9" type="Node2D" parent="Levels" unique_id=1117391229]
-visible = false
 
 [node name="Zombie" type="RigidBody2D" parent="Levels/9" unique_id=1014752231]
 z_index = 2
@@ -1055,6 +2288,38 @@ theme_override_font_sizes/font_size = 101
 text = "EMOTIONAL DAMAGE"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Timer" type="Label" parent="CanvasLayer" unique_id=981089561]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = -89.0
+offset_right = 736.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("17_ryguw")
+theme_override_font_sizes/font_size = 56
+vertical_alignment = 2
+
+[node name="Online" type="Label" parent="CanvasLayer" unique_id=2001928722]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -282.0
+offset_top = -89.0
+offset_right = -15.0
+offset_bottom = -3.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.7841667, 1, 0.65, 1)
+theme_override_fonts/font = ExtResource("17_ryguw")
+theme_override_font_sizes/font_size = 47
+text = "Loading..."
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("24_seu75")
 
 [node name="Label2" type="Label" parent="CanvasLayer" unique_id=1468494760]
 visible = false
@@ -1132,6 +2397,7 @@ grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer" unique_id=335838970]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

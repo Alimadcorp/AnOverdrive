@@ -12,6 +12,9 @@ var player_health = 100
 var zombie_health = 100
 var ainv = false
 var done = false
+@onready var timer_label = $CanvasLayer/Timer
+var start_tick: int = 0
+var elapsed_this_run: int = 0
 
 func fight_mode(en):
 	$"CanvasLayer/Healths".visible = en
@@ -70,13 +73,22 @@ func dmg_zombie(amt):
 		fight_mode(false)
 
 func _process(delta: float) -> void:
+	elapsed_this_run = Time.get_ticks_msec() - start_tick
+	var display_total = State.total_msec + elapsed_this_run
+	timer_label.text = State.get_formatted_time(display_total)
 	zh.value = lerpf(zh.value, zombie_health, 0.5)
 	ph.value = lerpf(ph.value, player_health, 0.5)
 
 func _ready() -> void:
+	for y in range(State.loop_count - 1):
+		for i in property_list:
+			var lval = shader_rect.material.get_shader_parameter(i)
+			shader_rect.material.set_shader_parameter(i, lval * 1.2)
+	start_tick = Time.get_ticks_msec()
 	_setup_level(true)
 
 func _on_finish_level_completed() -> void:
+	store()
 	await fade.fade_out()
 	State.loop_count += 1
 	_setup_level(false)
@@ -90,7 +102,9 @@ func _on_restart() -> void:
 	get_tree().reload_current_scene()
 
 func _setup_level(immediate: bool) -> void:
-	if not immediate: bg.pitch_scale *= 0.92
+	if not immediate: 
+		State.current_pitch *= 0.92
+	bg.pitch_scale = State.current_pitch
 	var total_levels = levels.get_child_count()
 	var level_index: int = int(State.loop_count % total_levels)
 	if(int(State.loop_count) == total_levels):
@@ -116,3 +130,7 @@ func _toggle_physics_recursive(node: Node, active: bool) -> void:
 		node.visible = active
 	for child in node.get_children():
 		_toggle_physics_recursive(child, active)
+
+func store():
+	State.add_to_state(elapsed_this_run)
+	start_tick = Time.get_ticks_msec()
